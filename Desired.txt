@@ -1,0 +1,73 @@
+Build a frontend website with there will be a nav bar with a logo named(CaedicX) Home page , Role page and contact page. and a toggle for dark and light theme . In the body there will be some cards or divs or whatever your choice. In which there will be photo of the employees and their name, email, and Role.
+
+In the role page there will be like In the role page there should be 
+Founder & CEO(Heading)
+CTO
+COO
+ADVISOR
+━━━━━━━━━━━━━━━━━━
+
+Engineering(heading)
+Lead Full Stack Developer
+Backend Developer
+Frontend Developer
+AI Engineer
+Blockchain Developer
+UI/UX Designer
+QA Engineer
+
+━━━━━━━━━━━━━━━━━━
+
+Product(Heading)
+Product Manager
+Product Designer
+
+━━━━━━━━━━━━━━━━━━
+
+Community(Heading)
+Head of Community
+Community Supervisors
+Community Moderators
+Ambassadors
+
+━━━━━━━━━━━━━━━━━━
+
+Marketing & Growth(Heading)
+Marketing Lead
+Graphic Designer
+Content Creator
+Partnerships Manager
+
+━━━━━━━━━━━━━━━━━━
+
+Research(Heading)
+Market Strategist
+Research Analyst
+
+━━━━━━━━━━━━━━━━━━
+
+Support(Heading)
+Customer Support Lead
+Support Specialists
+
+━━━━━━━━━━━━━━━━━━
+
+Finance & Legal(Heading)
+Finance Manager
+Legal Advisor
+Compliance Advisor
+
+━━━━━━━━━━━━━━━━━━
+
+Advisory Board(Heading)
+Technical Advisor
+Business Advisor
+Financial Advisor
+
+These thing in that page
+
+the contact page I dont know you can make what ever is your choice 
+
+Must is the UI must be kick ass , mind blowing I will put the Pictures of the employees in which ever folder you want.
+
+I will deploy this on the vercel so make it in that way

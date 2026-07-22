@@ -1,0 +1,316 @@
+:root {
+  color: #111827;
+  background-color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, 'Segoe UI', Roboto, sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.theme-dark {
+  --bg: #060816;
+  --bg-elev: rgba(15, 23, 42, 0.92);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #8b5cf6;
+  --accent-soft: rgba(139, 92, 246, 0.16);
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  background: radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 35%), var(--bg);
+  color: var(--text);
+}
+
+.theme-light {
+  --bg: #f8fafc;
+  --bg-elev: rgba(255, 255, 255, 0.8);
+  --text: #111827;
+  --muted: #4b5563;
+  --border: rgba(17, 24, 39, 0.08);
+  --accent: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.12);
+  --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.14), transparent 35%), var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-elev);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 16px;
+  z-index: 20;
+}
+
+.brand {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #22d3ee);
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link,
+.theme-toggle,
+.primary-btn,
+.secondary-btn {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.nav-link {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.nav-link.active {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-section,
+.team-section,
+.roles-section,
+.contact-section {
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow);
+}
+
+.hero-section {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  margin-bottom: 12px;
+}
+
+.hero-text,
+.member-info p,
+.role-card li,
+.contact-card p,
+.contact-form label {
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 12px 16px;
+  border-radius: 999px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--accent), #22d3ee);
+  color: white;
+}
+
+.secondary-btn {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.stat-card,
+.member-card,
+.role-card,
+.contact-card,
+.contact-form {
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 20px;
+}
+
+.stat-card ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.stat-label {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.team-grid,
+.role-grid,
+.contact-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.team-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.member-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+.member-role {
+  font-weight: 700;
+  color: var(--accent);
+  margin: 6px 0;
+}
+
+.role-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.role-card ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+}
+
+.contact-grid {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .hero-section,
+  .contact-grid,
+  .team-grid,
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    border-radius: 24px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .hero-section,
+  .team-section,
+  .roles-section,
+  .contact-section {
+    padding: 18px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+}
