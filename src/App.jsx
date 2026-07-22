@@ -90,23 +90,9 @@ const highlights = [
 function App() {
   const [activePage, setActivePage] = useState('home')
   const [isDark, setIsDark] = useState(true)
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [feedback, setFeedback] = useState('')
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
 
-    const { name, email, message } = formData
-    const subject = encodeURIComponent(`New message from ${name || 'a visitor'}`)
-    const body = encodeURIComponent(`Name: ${name || 'N/A'}\nEmail: ${email || 'N/A'}\n\nMessage:\n${message || 'No message provided.'}`)
-    const mailtoLink = `mailto:hello@cardicx.com?subject=${subject}&body=${body}`
-
-    if (typeof window !== 'undefined') {
-      window.location.href = mailtoLink
-    }
-
-    setFeedback('Your email app should open with a prefilled message. If it does not, email hello@cardicx.com directly.')
-  }
 
   return (
     <div className={`app-shell ${isDark ? 'theme-dark' : 'theme-light'}`}>
@@ -123,14 +109,36 @@ function App() {
           <button className={activePage === 'roles' ? 'nav-link active' : 'nav-link'} onClick={() => setActivePage('roles')} type="button">
             Role
           </button>
-          <button className={activePage === 'contact' ? 'nav-link active' : 'nav-link'} onClick={() => setActivePage('contact')} type="button">
-            Contact
-          </button>
         </nav>
+
+        <button className="mobile-nav-button" onClick={() => setIsSidebarOpen(true)} aria-label="Open navigation">
+          ☰
+        </button>
 
         <button className="theme-toggle" onClick={() => setIsDark((value) => !value)} type="button" aria-label="Toggle theme">
           {isDark ? '☀' : '🌙'}
         </button>
+
+        <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`} aria-hidden={!isSidebarOpen}>
+          <div className="sidebar-header">
+            <button className="brand" onClick={() => { setActivePage('home'); setIsSidebarOpen(false); }} type="button">
+              <span className="brand-mark">C</span>
+              CardicX
+            </button>
+            <button className="close-sidebar" onClick={() => setIsSidebarOpen(false)} aria-label="Close navigation">✕</button>
+          </div>
+          <nav className="sidebar-links">
+            <button className={activePage === 'home' ? 'nav-link active' : 'nav-link'} onClick={() => { setActivePage('home'); setIsSidebarOpen(false); }} type="button">
+              Home
+            </button>
+            <button className={activePage === 'roles' ? 'nav-link active' : 'nav-link'} onClick={() => { setActivePage('roles'); setIsSidebarOpen(false); }} type="button">
+              Role
+            </button>
+            <button className="nav-link" onClick={() => { window.location.href = 'mailto:hello@cardicx.com'; setIsSidebarOpen(false); }} type="button">
+              Contact
+            </button>
+          </nav>
+        </aside>
       </header>
 
       <main className="main-content">
@@ -147,9 +155,9 @@ function App() {
                   <button className="primary-btn" onClick={() => setActivePage('roles')} type="button">
                     Explore Roles
                   </button>
-                  <button className="secondary-btn" onClick={() => setActivePage('contact')} type="button">
-                    Let&apos;s Connect
-                  </button>
+                    <button className="secondary-btn" onClick={() => { window.location.href = 'mailto:hello@cardicx.com' }} type="button">
+                      Let&apos;s Connect
+                    </button>
                 </div>
               </div>
 
@@ -209,55 +217,7 @@ function App() {
           </section>
         )}
 
-        {activePage === 'contact' && (
-          <section className="contact-section">
-            <div className="section-heading">
-              <p className="eyebrow">Say hello</p>
-              <h2>Let&apos;s build something memorable together.</h2>
-            </div>
-
-            <div className="contact-grid">
-              <div className="contact-card">
-                <h3>Reach out</h3>
-                <p>hello@cardicx.com</p>
-                <p>+1 (555) 014-2048</p>
-                <p>Remote • Global • Always connected</p>
-              </div>
-
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <label>
-                  Name
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(event) => setFormData({ ...formData, name: event.target.value })}
-                  />
-                </label>
-                <label>
-                  Email
-                  <input
-                    type="email"
-                    placeholder="you@example.com"
-                    value={formData.email}
-                    onChange={(event) => setFormData({ ...formData, email: event.target.value })}
-                  />
-                </label>
-                <label>
-                  Message
-                  <textarea
-                    rows="4"
-                    placeholder="Tell us about your idea"
-                    value={formData.message}
-                    onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-                  />
-                </label>
-                <button className="primary-btn" type="submit">Send Message</button>
-                {feedback ? <p className="feedback-text">{feedback}</p> : null}
-              </form>
-            </div>
-          </section>
-        )}
+        
       </main>
     </div>
   )
