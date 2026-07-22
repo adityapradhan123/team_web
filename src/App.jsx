@@ -99,13 +99,13 @@ function App() {
     const { name, email, message } = formData
     const subject = encodeURIComponent(`New message from ${name || 'a visitor'}`)
     const body = encodeURIComponent(`Name: ${name || 'N/A'}\nEmail: ${email || 'N/A'}\n\nMessage:\n${message || 'No message provided.'}`)
-    const mailtoLink = `mailto:hello@caedicx.com?subject=${subject}&body=${body}`
+    const mailtoLink = `mailto:hello@cardicx.com?subject=${subject}&body=${body}`
 
     if (typeof window !== 'undefined') {
       window.location.href = mailtoLink
     }
 
-    setFeedback('Your email app should open with a prefilled message. If it does not, email hello@caedicx.com directly.')
+    setFeedback('Your email app should open with a prefilled message. If it does not, email hello@cardicx.com directly.')
   }
 
   return (
@@ -113,7 +113,7 @@ function App() {
       <header className="topbar">
         <button className="brand" onClick={() => setActivePage('home')} type="button">
           <span className="brand-mark">C</span>
-          CaedicX
+          CardicX
         </button>
 
         <nav className="nav-links" aria-label="Primary navigation">
@@ -219,7 +219,7 @@ function App() {
             <div className="contact-grid">
               <div className="contact-card">
                 <h3>Reach out</h3>
-                <p>hello@caedicx.com</p>
+                <p>hello@cardicx.com</p>
                 <p>+1 (555) 014-2048</p>
                 <p>Remote • Global • Always connected</p>
               </div>
