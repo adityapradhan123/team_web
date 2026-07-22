@@ -24,19 +24,6 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.theme-dark {
-  --bg: #060816;
-  --bg-elev: rgba(15, 23, 42, 0.92);
-  --text: #f8fafc;
-  --muted: #cbd5e1;
-  --border: rgba(255, 255, 255, 0.12);
-  --accent: #8b5cf6;
-  --accent-soft: rgba(139, 92, 246, 0.16);
-  --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-  background: radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 35%), var(--bg);
-  color: var(--text);
-}
-
 .theme-light {
   --bg: #f8fafc;
   --bg-elev: rgba(255, 255, 255, 0.8);
@@ -142,7 +129,6 @@ textarea {
 }
 
 .nav-link,
-.theme-toggle,
 .primary-btn,
 .secondary-btn {
   border: none;
@@ -162,13 +148,7 @@ textarea {
   background: var(--accent-soft);
 }
 
-.theme-toggle {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
-}
+/* theme toggle removed - light-only UI */
 
 .main-content {
   max-width: 1200px;

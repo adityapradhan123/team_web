@@ -89,13 +89,12 @@ const highlights = [
 
 function App() {
   const [activePage, setActivePage] = useState('home')
-  const [isDark, setIsDark] = useState(true)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
 
 
   return (
-    <div className={`app-shell ${isDark ? 'theme-dark' : 'theme-light'}`}>
+    <div className="app-shell theme-light">
       <header className="topbar">
         <button className="brand" onClick={() => setActivePage('home')} type="button">
           <span className="brand-mark">C</span>
@@ -115,10 +114,6 @@ function App() {
           ☰
         </button>
 
-        <button className="theme-toggle" onClick={() => setIsDark((value) => !value)} type="button" aria-label="Toggle theme">
-          {isDark ? '☀' : '🌙'}
-        </button>
-
         <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`} aria-hidden={!isSidebarOpen}>
           <div className="sidebar-header">
             <button className="brand" onClick={() => { setActivePage('home'); setIsSidebarOpen(false); }} type="button">
@@ -134,9 +129,7 @@ function App() {
             <button className={activePage === 'roles' ? 'nav-link active' : 'nav-link'} onClick={() => { setActivePage('roles'); setIsSidebarOpen(false); }} type="button">
               Role
             </button>
-            <button className="nav-link" onClick={() => { window.location.href = 'mailto:hello@cardicx.com'; setIsSidebarOpen(false); }} type="button">
-              Contact
-            </button>
+            
           </nav>
         </aside>
       </header>
