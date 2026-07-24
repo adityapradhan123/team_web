@@ -27,11 +27,35 @@ const teamMembers = [
     image: '/Person4.png',
   },
   {
-    name: 'Elio',
+    name: 'Eleo',
     role: 'ROLE ADVISOR ',
-    email: 'Realcardic1@gmail.com',
+    email: '@Web3_Eleo',
     image: '/Person5.webp',
-  }
+  },
+  {
+    name: 'Estrella Zayneb ',
+    role: 'VP. SUPPORT',
+    email: ' Zino.hrk23@gmail.com',
+    image: '/Person6.jpg',
+  },
+  {
+    name: 'Experience ',
+    role: 'Co founder ',
+    email: ' exp.m37@gmail.com',
+    image: '/Person7.jpg',
+  },
+  {
+    name: 'WILSON',
+    role: 'V.P COMMUNITY TG AND DISCORD',
+    email: '@wils017',
+    image: '/Person8.jpg',
+  },
+  {
+    name: 'ANDRE',
+    role: 'SENIOR COMMUNITY ADMIN ',
+    email: ' @andrebggv',
+    image: '/Person5.webp',
+  },
 ]
 
 const roleGroups = [
